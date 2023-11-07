@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="bg-success p-2" style="--bs-bg-opacity: .5;">
+        <h3 class="container">Agregar producto</h3>
+        <section class="container">
+            <form class="mb-3" method="post">
+                {% csrf_token %}
+                <div class="col-auto">
+                    {{ newProduct.as_p }}
+                </div>
+                <button class="btn btn-success mb-3" type="submit"> Guardar </button>
+            </form>
+        </section>
+    </div>
+{% endblock  %}
